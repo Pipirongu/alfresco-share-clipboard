@@ -3,6 +3,15 @@
 		<module>
 			<id>Alfresco Share Clipboard</id>
 			<auto-deploy>true</auto-deploy>
+
+			<configurations>
+				<config evaluator="string-compare" condition="DocumentLibrary">
+					<multi-select>
+						<action type="action-link" id="onActionClipboardAddDocuments" asset="document" label="action.clipboard.add.document" />
+					</multi-select>
+				</config>
+			</configurations>
+
 			<components>
 				<component>
 					<scope>template</scope>
@@ -39,3 +48,4 @@
 
 	</modules>
 </extension>
+
