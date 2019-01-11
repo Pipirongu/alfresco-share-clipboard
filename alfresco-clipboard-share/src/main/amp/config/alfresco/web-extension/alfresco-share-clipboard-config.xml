@@ -44,10 +44,10 @@
 
 		<actionGroups>
 			<actionGroup id="document-browse">
-				<action index="400" id="org_alfresco_clipboard-add_document" />
+				<action index="153" id="org_alfresco_clipboard-add_document" />
 			</actionGroup>
 			<actionGroup id="document-details">
-				<action index="400" id="org_alfresco_clipboard-add_document" />
+				<action index="165" id="org_alfresco_clipboard-add_document" />
 			</actionGroup>
 
 			<actionGroup id="folder-browse">
