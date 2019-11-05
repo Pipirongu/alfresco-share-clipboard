@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.fmaul</groupId>
     <artifactId>alfresco-clipboard-share</artifactId>
-    <version>9.9.9.1</version>
+    <version>9.9.9.3</version>
     <name>Alfresco Share Clipboard Share AMP</name>
     <packaging>amp</packaging>
     <description>Manages the lifecycle of the Alfresco Share Clipboard Share AMP (Alfresco Module Package)</description>

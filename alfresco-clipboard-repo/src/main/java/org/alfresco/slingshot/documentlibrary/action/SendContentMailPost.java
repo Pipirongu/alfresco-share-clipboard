@@ -234,10 +234,20 @@ public class SendContentMailPost extends DeclarativeWebScript {
 		StringBuilder bodyText = new StringBuilder();
 		for (NodeRef actionedUponNodeRef : nodeRefs) {
 			bodyText.append(nodeService.getProperty(actionedUponNodeRef, ContentModel.PROP_NAME) + "\n");
-			bodyText.append(sysAdminParams.getAlfrescoProtocol() + "://" + sysAdminParams.getAlfrescoHost() + ":"
-					+ "/page/site/"
-					+ siteService.getSiteShortName(actionedUponNodeRef) + "/document-details?nodeRef="
-					+ actionedUponNodeRef.getStoreRef() + "/" + actionedUponNodeRef.getId() + "\n\n");
+
+			String siteShortName = siteService.getSiteShortName(actionedUponNodeRef);
+			if(siteShortName != null) {
+				// Nukissiorfiit specific case, null is returned on nodes in smart folders
+				bodyText.append(sysAdminParams.getAlfrescoProtocol() + "://" + sysAdminParams.getAlfrescoHost()
+						+ "/page/site/"
+						+ siteService.getSiteShortName(actionedUponNodeRef) + "/document-details?nodeRef="
+						+ actionedUponNodeRef.getStoreRef() + "/" + actionedUponNodeRef.getId() + "\n\n");
+			} else {
+				bodyText.append(sysAdminParams.getAlfrescoProtocol() + "://" + sysAdminParams.getAlfrescoHost()
+						+ "/page/document-details?nodeRef="
+						+ actionedUponNodeRef.getStoreRef() + "/" + actionedUponNodeRef.getId() + "\n\n");
+			}
+
 		}
 		return bodyText.toString();
 	}
